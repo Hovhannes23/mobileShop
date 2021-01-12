@@ -1,5 +1,7 @@
-package com.example.mobileShop;
+package com.example.mobileShop.Entity;
 
+
+import com.example.mobileShop.Entity.Manufacturer;
 
 import javax.persistence.*;
 

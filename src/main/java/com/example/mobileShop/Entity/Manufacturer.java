@@ -1,4 +1,4 @@
-package com.example.mobileShop;
+package com.example.mobileShop.Entity;
 
 
 import javax.persistence.*;
