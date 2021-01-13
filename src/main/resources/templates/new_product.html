@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new product</title>
+</head>
+<body>
+       <div align="center">
+           <h1>Add new product</h1>
+           <br/>
+           <form action="#" th:action="@{/add}"  method="post">
+               <table border="0" cellpadding="10">
+                   <tr>
+                       <td>Product name</td>
+                       <td><input type="text" th:value="${product.name}" name="name"/></td>
+                   </tr>
+                   <tr>
+                       <td>Price</td>
+                       <td><input type="text" th:value="${product.price}" name="price"/></td>
+                   </tr>
+                   <tr>
+                       <td>Description</td>
+                       <td><input type="text" th:value="${product.description}" name="description"/></td>
+                   </tr>
+                   <tr>
+                       <td>Manufacturer</td>
+                       <td><input type="text" th:value="${manufacturer.name}" name="name"/></td>
+                   </tr>
+                   <tr>
+                       <td>Manufacturer`s country</td>
+                       <td><input type="text" th:value="${manufacturer.country}" name="country"/></td>
+                   </tr>
+                   <tr>
+                       <td>Manufacturer`s email</td>
+                       <td><input type="email" th:value="${manufacturer.email}" name="email"/></td>
+                   </tr>
+                   <tr>
+                       <td colspan="2"><button type="submit">Add</button></td>
+                   </tr>
+
+               </table>
+
+
+           </form>
+
+       </div>
+</body>
+</html>

@@ -12,6 +12,9 @@ public class Manufacturer {
     private String email;
     private String name;
 
+public Manufacturer(){
+
+}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,12 +51,5 @@ public class Manufacturer {
         this.name = name;
     }
 
-    public Manufacturer(String country, String email, String name) {
-        this.country = country;
-        this.email = email;
-        this.name = name;
-    }
 
-    public Manufacturer() {
-    }
 }

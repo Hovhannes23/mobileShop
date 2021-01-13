@@ -15,6 +15,10 @@ public class Product {
     private String description;
     private Manufacturer manufacturer;
 
+    public Product(){
+
+    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,7 +57,7 @@ public class Product {
         this.description = description;
     }
 
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "manufacturer_id")
     public Manufacturer getManufacturer() {
         return manufacturer;
