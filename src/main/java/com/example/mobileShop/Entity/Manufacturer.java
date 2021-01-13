@@ -7,10 +7,10 @@ import javax.persistence.*;
 @Table(name="manufacturers")
 public class Manufacturer {
 
-    private Long id;
+    private Long id_manufacturer;
     private String country;
     private String email;
-    private String name;
+    private String brand;
 
 public Manufacturer(){
 
@@ -19,12 +19,12 @@ public Manufacturer(){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "manufacturer_id")
-    public Long getId() {
-        return id;
+    public Long getId_manufacturer() {
+        return id_manufacturer;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_manufacturer(Long id) {
+        this.id_manufacturer = id;
     }
     @Column(name = "manufacturer_country")
     public String getCountry() {
@@ -43,12 +43,12 @@ public Manufacturer(){
         this.email = email;
     }
     @Column(name = "manufacturer_name")
-    public String getName() {
-        return name;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBrand(String name) {
+        this.brand = name;
     }
 
 

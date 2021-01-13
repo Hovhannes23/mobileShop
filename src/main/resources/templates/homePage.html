@@ -24,10 +24,13 @@
         <tr th:each="product: ${listProducts}">
             <td th:text="${product.getId()}">Product Id</td>
             <td th:text="${product.getName()}">Name</td>
-            <td th:text="${product.getManufacturer().getName()}">Manufacturer</td>
+            <td th:text="${product.getManufacturer().getBrand()}">Manufacturer</td>
             <td th:text="${product.getManufacturer().getCountry()}">Country</td>
             <td th:text="${product.getPrice()}">Price</td>\
             <td th:text="${product.getDescription()}">Description</td>
+            <td>
+                <a th:href="@{'/edit/'+${product.getId()}}">Edit</a>
+            </td>
 
         </tr>
     </tbody>

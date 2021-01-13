@@ -8,7 +8,7 @@
        <div align="center">
            <h1>Add new product</h1>
            <br/>
-           <form action="#" th:action="@{/add}"  method="post">
+           <form action="#" th:action="@{/save}" method="post">
                <table border="0" cellpadding="10">
                    <tr>
                        <td>Product name</td>
@@ -24,7 +24,7 @@
                    </tr>
                    <tr>
                        <td>Manufacturer</td>
-                       <td><input type="text" th:value="${manufacturer.name}" name="name"/></td>
+                       <td><input type="text" th:value="${manufacturer.brand}" name="brand"/></td>
                    </tr>
                    <tr>
                        <td>Manufacturer`s country</td>

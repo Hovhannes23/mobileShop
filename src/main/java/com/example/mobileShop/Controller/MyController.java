@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -41,7 +43,7 @@ public class MyController {
     }
 
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("product") Product product,
                              @ModelAttribute("manufacturer") Manufacturer manufacturer){
 
@@ -50,5 +52,17 @@ public class MyController {
       manufacturerService.save(manufacturer);
 
       return "redirect:/";
+    }
+
+    @RequestMapping("/edit/{id}")
+    public ModelAndView showEditProductForm(@PathVariable(name = "id") Long id){
+         ModelAndView mav = new ModelAndView("edit_product");
+
+         Product product = productService.getById(id);
+         Manufacturer manufacturer = product.getManufacturer();
+         mav.addObject("product", product);
+         mav.addObject("manufacturer", manufacturer);
+
+         return mav;
     }
 }
