@@ -63,4 +63,11 @@ public class MyController {
 
          return mav;
     }
+
+
+    @RequestMapping("/delete/{id}")
+    public String DeleteProduct(@PathVariable(name = "id") Long id){
+        productService.deleteById(id);
+        return "redirect:/";
+    }
 }

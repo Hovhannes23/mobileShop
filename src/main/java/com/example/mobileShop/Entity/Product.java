@@ -15,7 +15,7 @@ public class Product {
     private String description;
     private Manufacturer manufacturer;
 
-    public Product(){
+    public Product() {
 
     }
 
@@ -30,6 +30,7 @@ public class Product {
     public void setId(Long id) {
         this.id = id;
     }
+
     @Column(name = "product_name")
     public String getName() {
         return name;
@@ -57,7 +58,7 @@ public class Product {
         this.description = description;
     }
 
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "manufacturer_id")
     public Manufacturer getManufacturer() {
         return manufacturer;
@@ -67,3 +68,4 @@ public class Product {
         this.manufacturer = manufacturer;
     }
 }
+

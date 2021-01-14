@@ -30,6 +30,8 @@
             <td th:text="${product.getDescription()}">Description</td>
             <td>
                 <a th:href="@{'/edit/'+${product.getId()}}">Edit</a>
+           &nbsp; &nbsp; &nbsp;
+                <a th:href="@{'/delete/'+${product.getId()}}">Delete</a>
             </td>
 
         </tr>
