@@ -34,6 +34,7 @@ public Manufacturer(){
     public void setCountry(String country) {
         this.country = country;
     }
+
     @Column(name = "manufacturer_email")
     public String getEmail() {
         return email;
@@ -42,6 +43,7 @@ public Manufacturer(){
     public void setEmail(String email) {
         this.email = email;
     }
+
     @Column(name = "manufacturer_name")
     public String getBrand() {
         return brand;
