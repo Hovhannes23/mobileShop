@@ -6,6 +6,7 @@ import com.example.mobileShop.Entity.Product;
 import com.example.mobileShop.Service.ManufacturerService;
 import com.example.mobileShop.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,8 +27,8 @@ public class MyController {
     private ManufacturerService manufacturerService;
 
     @RequestMapping("/")
-    public String homePage(Model model){
-       List<Product> listProducts = productService.listAll();
+    public String homePage(Model model, @Param("keyword") String keyword){
+       List<Product> listProducts = productService.listAll(keyword);
        model.addAttribute("listProducts", listProducts);
         return "homePage";
     }
@@ -62,5 +63,12 @@ public class MyController {
          mav.addObject("manufacturer", manufacturer);
 
          return mav;
+    }
+
+
+    @RequestMapping("/delete/{id}")
+    public String DeleteProduct(@PathVariable(name = "id") Long id){
+        productService.deleteById(id);
+        return "redirect:/";
     }
 }
