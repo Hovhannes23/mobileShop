@@ -27,18 +27,18 @@ public class MyController {
 
     @RequestMapping("/")
     public String homePage(Model model){
-        List<Product> listProducts = productService.listAll();
-
-        model.addAttribute("listProducts", listProducts);
+       List<Product> listProducts = productService.listAll();
+       model.addAttribute("listProducts", listProducts);
         return "homePage";
     }
 
     @RequestMapping("/new")
     public  String showNewProductForm(Model model){
         Product product = new Product();
-        Manufacturer manufacturer = new Manufacturer();
+       Manufacturer manufacturer = new Manufacturer();
+       product.setManufacturer(manufacturer);
         model.addAttribute("product",product);
-        model.addAttribute("manufacturer",manufacturer);
+        model.addAttribute("manufacturer", manufacturer);
         return "new_product";
     }
 
@@ -47,13 +47,11 @@ public class MyController {
     public String addProduct(@ModelAttribute("product") Product product,
                              @ModelAttribute("manufacturer") Manufacturer manufacturer){
 
-        product.setManufacturer(manufacturer);
-      productService.save(product);
-      manufacturerService.save(manufacturer);
-
+    Manufacturer manufacturer1 = manufacturerService.findByBrand(manufacturer.getBrand());
+    product.setManufacturer(manufacturer1);
+    productService.save(product);
       return "redirect:/";
     }
-
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditProductForm(@PathVariable(name = "id") Long id){
          ModelAndView mav = new ModelAndView("edit_product");

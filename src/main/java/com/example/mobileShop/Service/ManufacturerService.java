@@ -29,4 +29,10 @@ public class ManufacturerService  {
     public void deleteById(Long id){
         repo.deleteById(id);
     }
+
+    public Manufacturer findByBrand(String brand){
+       Manufacturer manufacturer = repo.findByBrand(brand);
+       return manufacturer;
+    }
+
 }
