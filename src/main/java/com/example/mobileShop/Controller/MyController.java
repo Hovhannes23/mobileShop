@@ -30,6 +30,7 @@ public class MyController {
     public String homePage(Model model, @Param("keyword") String keyword){
        List<Product> listProducts = productService.listAll(keyword);
        model.addAttribute("listProducts", listProducts);
+       model.addAttribute("keyword",keyword);
         return "homePage";
     }
 

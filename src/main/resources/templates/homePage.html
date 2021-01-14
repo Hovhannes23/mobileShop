@@ -14,12 +14,12 @@
     <div>&nbsp;</div>
     <div>
         <form th:action="@{/}">
-            Search:
-            <input type="text" name="keyword" required/>
+            Filter:
+            <input type="text" name="keyword" th:value="${keyword}" required/>
             &nbsp;
             <input type="submit" value="Search">
             &nbsp;
-            <input type="button" value="Clear">
+            <input type="button" value="Clear" onclick="clearFilter()">
         </form>
     </div>
    <table border="1">
@@ -52,5 +52,10 @@
     </tbody>
 </table>
 </div>
+<script type="text/javascript">
+    function clearFilter() {
+           window.location= '/';
+    }
+</script>
 </body>
 </html>
