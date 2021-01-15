@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new product</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
        <div align="center">
            <h1>Add new product</h1>
            <br/>
            <form action="#" th:action="@{/save}" method="post">
-               <table border="0" cellpadding="10">
+               <table class="content-table">
                    <tr>
                        <td>Product name</td>
                        <td><input type="text" th:value="${product.name}" name="name"/></td>
