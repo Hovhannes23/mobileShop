@@ -10,17 +10,17 @@
 <div align="center">
     <div>
        <h1>Products</h1>
-       <a href="new" class="boot">Add</a>
+       <a href="new"  class="form_input">Add</a>
     </div>
 
     <div>&nbsp;</div>
     <div>
         <form th:action="@{/}">
-            <input type="text" name="keyword" th:value="${keyword}" required/>
+            <input class="keyword" type="text" name="keyword" th:value="${keyword}" required/>
             &nbsp;
-            <input type="submit" value="Search">
+            <input class="form_input" type="submit" value="Search">
             &nbsp;
-            <input type="button" value="Clear" onclick="clearFilter()">
+            <input  class="form_input" type="button" value="Clear" onclick="clearFilter()">
         </form>
     </div>
    <table class="content-table">

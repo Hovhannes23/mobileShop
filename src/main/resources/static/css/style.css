@@ -45,3 +45,20 @@ H1 {
     font-family: "Helvetica";
 }
 
+.form_input {
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    background: tomato;
+    padding: .7em 1.5em;
+    outline: none;
+}
+
+.keyword {
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    background: white;
+    padding: .7em 1.5em;
+    outline: none;
+}
