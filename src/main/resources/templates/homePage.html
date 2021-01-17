@@ -24,16 +24,16 @@
         </form>
     </div>
 
-   <table class="content-table" th:width="1450px">
+   <table class="content-table" th:width="1150px">
     <thead>
         <tr>
-            <th th:width="150px">Product Id</th>
-            <th th:width="150px">Name</th>
-            <th th:width="150px">Manufacturer</th>
-            <th th:width="150px">Country</th>
-            <th th:width="150px">Price</th>
+            <th th:width="50px">Product Id</th>
+            <th th:width="100px">Name</th>
+            <th th:width="100px">Manufacturer</th>
+            <th th:width="100px">Country</th>
+            <th th:width="50px">Price</th>
             <th th:width="500px">Description</th>
-            <th th:width="200px">Actions</th>
+            <th th:width="250px">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -45,9 +45,9 @@
             <td th:text="${product.getPrice()}">Price</td>\
             <td th:text="${product.getDescription()}">Description</td>
             <td>
-                <a th:href="@{'/edit/'+${product.getId()}}">Edit</a>
+                <a class="form_input" th:href="@{'/edit/'+${product.getId()}}">Edit</a>
            &nbsp; &nbsp; &nbsp;
-                <a th:href="@{'/delete/'+${product.getId()}}">Delete</a>
+                <a class="form_input" th:href="@{'/delete/'+${product.getId()}}">Delete</a>
             </td>
 
         </tr>
